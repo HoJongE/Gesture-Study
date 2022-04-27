@@ -8,7 +8,7 @@
 import SwiftUI
 
 @main
-struct Gesture_StudyApp: App {
+struct GestureStudyApp: App {
     var body: some Scene {
         WindowGroup {
             ContentView()
