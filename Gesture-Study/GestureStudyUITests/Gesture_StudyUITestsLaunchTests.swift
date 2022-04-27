@@ -7,7 +7,7 @@
 
 import XCTest
 
-class Gesture_StudyUITestsLaunchTests: XCTestCase {
+class GestureStudyUITestsLaunchTests: XCTestCase {
 
     override class var runsForEachTargetApplicationUIConfiguration: Bool {
         true
