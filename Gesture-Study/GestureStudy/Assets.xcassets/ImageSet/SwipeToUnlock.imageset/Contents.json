@@ -1,0 +1,12 @@
+{
+  "images" : [
+    {
+      "filename" : "swipe_to_unlock.svg",
+      "idiom" : "universal"
+    }
+  ],
+  "info" : {
+    "author" : "xcode",
+    "version" : 1
+  }
+}
