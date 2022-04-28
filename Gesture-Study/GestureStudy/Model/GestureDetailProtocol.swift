@@ -9,10 +9,10 @@ import Foundation
 import SwiftUI
 
 protocol GestureDetailProtocol {
-  
+
   associatedtype ExampleView: View
   associatedtype DetailDescription: View
-  
+
   var gestureCategory: GestureCategory { get }
   var enNm: String { get }
   var korNm: String { get }
@@ -21,5 +21,5 @@ protocol GestureDetailProtocol {
   var shortDescription: String { get }
   var exampleView: ExampleView { get }
   var detailDescription: DetailDescription { get }
-  
+
 }
