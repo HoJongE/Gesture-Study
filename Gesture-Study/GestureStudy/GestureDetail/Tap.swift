@@ -17,11 +17,11 @@ struct Tap: GestureDetailProtocol {
 
   let korNm: String = "탭"
 
-  let swiftCode: String = ""
+  let swiftCode: String = "import SwiftUI"
 
   let image: Image = Image(systemName: "hand.tap.fill")
 
-  let shortDescription: String = "탭임"
+  let shortDescription: String = "단순히 화면을 한 번 터치하는 제스처입니다.\n화면을 터치해보세요!"
 
   let exampleView: Text = Text("하하!")
 
