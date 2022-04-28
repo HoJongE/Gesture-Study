@@ -8,7 +8,7 @@
 import Foundation
 import SwiftUI
 
-enum GestureCategory {
+enum GestureCategory: CaseIterable {
   case tap
   case drag
   case swipe
