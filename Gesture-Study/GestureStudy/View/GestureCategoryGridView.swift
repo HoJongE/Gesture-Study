@@ -15,6 +15,8 @@ struct GestureCategoryGridView: View {
         GestureCategoryGridItemView(category: category)
       }
     }
+    .padding(.top, 20)
+    .padding(.horizontal, 8)
   }
 }
 

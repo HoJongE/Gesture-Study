@@ -9,9 +9,30 @@ import SwiftUI
 
 // MARK: 제스처 디테일 그리드뷰
 struct GestureDetailGridView: View {
-    var body: some View {
-      GestureDetailGridItem(gestureDetail: Tap())
+
+  private let category: GestureCategory
+
+  init(category gestureCategory: GestureCategory) {
+    self.category = gestureCategory
+  }
+
+  var body: some View {
+    ScrollView(.vertical, showsIndicators: false) {
+      gridView
     }
+    .padding(.top, 20)
+    .padding(.horizontal, 8)
+    .navigationTitle(category.categoryEnNm)
+    .background(Color.background.edgesIgnoringSafeArea(.all))
+  }
+
+  private var gridView: some View {
+    LazyVGrid(columns: [GridItem(.flexible(), spacing: 0), GridItem(.flexible(), spacing: 0)], spacing: 14) {
+      ForEach([Tap()]) { detail in
+        GestureDetailGridItem(gestureDetail: detail)
+      }
+    }
+  }
 }
 // MARK: 제스처 디테일 그리드 아이템
 struct GestureDetailGridItem<Detail: GestureDetailProtocol>: View {
@@ -44,7 +65,10 @@ struct GestureDetailGridItem<Detail: GestureDetailProtocol>: View {
 }
 // MARK: 제스처 디테일 프리뷰
 struct GestureDetailGridView_Previews: PreviewProvider {
-    static var previews: some View {
-        GestureDetailGridView()
+  static var previews: some View {
+    NavigationView {
+      GestureDetailGridView(category: .tap)
+        .preferredColorScheme(.dark)
     }
+  }
 }
