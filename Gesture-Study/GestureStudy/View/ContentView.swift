@@ -13,6 +13,7 @@ struct ContentView: View {
         Text("Hello World")
           .navigationTitle("타이틀")
       }
+      .preferredColorScheme(.dark)
     }
 }
 

@@ -9,7 +9,7 @@ import Foundation
 import SwiftUI
 
 extension Color {
-  static let primary: Color = Color("PrimaryColor")
+  static let brand: Color = Color("PrimaryColor")
   static let grayButton: Color = Color("GrayColor")
   static let subText: Color = Color("SubTextColor")
   static let stuTop: Color = Color("SwipeToUnlockTopColor")
@@ -18,4 +18,5 @@ extension Color {
   static let stuBtnCenter: Color = Color("SwipeToUnlockButtonCenterColor")
   static let stuBtnBottom: Color = Color("SwipeToUnlockButtonBottomColor")
   static let background: Color = Color("BackgroundColor")
+  static let gridItemBackground: Color = Color("GridItemBackground")
 }
