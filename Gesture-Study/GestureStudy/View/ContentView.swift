@@ -20,8 +20,6 @@ struct ContentView: View {
     ScrollView(.vertical, showsIndicators: false) {
       GestureCategoryGridView()
     }
-    .padding(.top, 20)
-    .padding(.horizontal, 8)
     .navigationTitle("Gesture Category")
     .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .topLeading)
     .background(Color.background.edgesIgnoringSafeArea(.all))

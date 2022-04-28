@@ -9,6 +9,8 @@ import Foundation
 import SwiftUI
 
 struct Tap: GestureDetailProtocol {
+  var id: UUID = UUID()
+
   let gestureCategory: GestureCategory = .tap
 
   let enNm: String = "Tap"

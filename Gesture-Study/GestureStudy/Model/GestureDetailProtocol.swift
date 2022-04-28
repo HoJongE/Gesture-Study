@@ -8,7 +8,7 @@
 import Foundation
 import SwiftUI
 
-protocol GestureDetailProtocol {
+protocol GestureDetailProtocol: Identifiable {
 
   associatedtype ExampleView: View
   associatedtype DetailDescription: View
