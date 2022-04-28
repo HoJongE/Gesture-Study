@@ -8,12 +8,13 @@
 import SwiftUI
 
 struct ContentView: View {
-    var body: some View {
-      NavigationView {
-        contentView
-      }
-      .preferredColorScheme(.dark)
+
+  var body: some View {
+    NavigationView {
+      contentView
     }
+    .preferredColorScheme(.dark)
+  }
 
   private var contentView: some View {
     ScrollView(.vertical, showsIndicators: false) {
@@ -26,7 +27,7 @@ struct ContentView: View {
     .background(Color.background.edgesIgnoringSafeArea(.all))
     .toolbar(content: toolbar)
   }
-
+  
   private var higBtn: some View {
     Button {
       print("Hello")
@@ -48,8 +49,8 @@ extension ContentView {
 }
 
 struct ContentView_Previews: PreviewProvider {
-    static var previews: some View {
-        ContentView()
-        .preferredColorScheme(.dark)
-    }
+  static var previews: some View {
+    ContentView()
+      .preferredColorScheme(.dark)
+  }
 }

@@ -21,13 +21,13 @@ struct GestureCategoryGridView: View {
 // MARK: - Gesture Category 그리드 아이템 뷰
 struct GestureCategoryGridItemView: View {
   private let gestureCategory: GestureCategory
-
+  
   init(category gestureCategory: GestureCategory) {
     self.gestureCategory = gestureCategory
   }
-
+  
   var body: some View {
-
+    
     VStack(alignment: .center, spacing: 2) {
       gestureCategory.gestureImage
         .resizable()
@@ -35,11 +35,11 @@ struct GestureCategoryGridItemView: View {
         .frame(width: 52, height: 52)
         .foregroundColor(.brand)
         .padding(.init(top: 34, leading: 0, bottom: 25, trailing: 0))
-
+      
       Text(gestureCategory.categoryEnNm)
         .font(.title3)
         .bold()
-
+      
       Text(gestureCategory.categoryKorNm)
         .font(.caption)
         .foregroundColor(.subText)
