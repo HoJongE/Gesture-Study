@@ -27,7 +27,16 @@ struct ContentView: View {
     .background(Color.background.edgesIgnoringSafeArea(.all))
     .toolbar(content: toolbar)
   }
-  
+}
+// MARK: - Gesture Category 툴바
+extension ContentView {
+  @ToolbarContentBuilder
+  func toolbar() -> some ToolbarContent {
+    ToolbarItem(placement: .primaryAction) {
+      higBtn
+    }
+  }
+
   private var higBtn: some View {
     Button {
       print("Hello")
@@ -38,16 +47,7 @@ struct ContentView: View {
     }
   }
 }
-
-extension ContentView {
-  @ToolbarContentBuilder
-  func toolbar() -> some ToolbarContent {
-    ToolbarItem(placement: .primaryAction) {
-      higBtn
-    }
-  }
-}
-
+// MARK: - 프리뷰
 struct ContentView_Previews: PreviewProvider {
   static var previews: some View {
     ContentView()
