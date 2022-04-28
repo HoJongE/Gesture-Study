@@ -10,8 +10,10 @@ import SwiftUI
 // MARK: - Gesture Category 그리드 뷰
 struct GestureCategoryGridView: View {
   var body: some View {
-    VStack {
-      GestureCategoryGridItemView(category: .rotate)
+    LazyVGrid(columns: [GridItem(.flexible(), spacing: 0), GridItem(.flexible(), spacing: 0)], spacing: 14) {
+      ForEach(GestureCategory.allCases, id: \.self) { category in
+        GestureCategoryGridItemView(category: category)
+      }
     }
   }
 }
@@ -26,16 +28,17 @@ struct GestureCategoryGridItemView: View {
 
   var body: some View {
 
-    VStack(spacing: 2) {
+    VStack(alignment: .center, spacing: 2) {
       gestureCategory.gestureImage
         .resizable()
-        .aspectRatio(contentMode: .fit)
+        .aspectRatio(contentMode: .fill)
         .frame(width: 52, height: 52)
         .foregroundColor(.brand)
-        .padding(24)
+        .padding(.init(top: 33, leading: 0, bottom: 25, trailing: 0))
 
       Text(gestureCategory.categoryEnNm)
         .font(.title3)
+        .bold()
 
       Text(gestureCategory.categoryKorNm)
         .font(.caption)
@@ -43,8 +46,9 @@ struct GestureCategoryGridItemView: View {
         .padding(.bottom, 8)
     }
     .lineLimit(1)
+    .frame(maxWidth: 300)
     .background(RoundedRectangle(cornerRadius: 8).fill(Color.gridItemBackground).shadow(radius: 2))
-
+    .padding(.horizontal, 8)
   }
 }
 
