@@ -34,7 +34,7 @@ struct GestureCategoryGridItemView: View {
         .aspectRatio(contentMode: .fill)
         .frame(width: 52, height: 52)
         .foregroundColor(.brand)
-        .padding(.init(top: 33, leading: 0, bottom: 25, trailing: 0))
+        .padding(.init(top: 34, leading: 0, bottom: 25, trailing: 0))
 
       Text(gestureCategory.categoryEnNm)
         .font(.title3)
@@ -43,7 +43,7 @@ struct GestureCategoryGridItemView: View {
       Text(gestureCategory.categoryKorNm)
         .font(.caption)
         .foregroundColor(.subText)
-        .padding(.bottom, 8)
+        .padding(.bottom, 10)
     }
     .lineLimit(1)
     .frame(maxWidth: 300)
@@ -51,7 +51,7 @@ struct GestureCategoryGridItemView: View {
     .padding(.horizontal, 8)
   }
 }
-
+// MARK: - Gesture Category 프리뷰
 struct GestureCategoryGridView_Previews: PreviewProvider {
   static var previews: some View {
     GestureCategoryGridView()
