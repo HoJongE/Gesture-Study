@@ -97,12 +97,16 @@ struct TapEventCircle: View {
 
   let shortDescription: String = "단순히 화면을 한 번 터치하는 제스처입니다.\n화면을 터치해보세요!"
 
-  let exampleView: TapSample = TapSample()
+  var exampleView: TapSample {
+    TapSample()
+  }
 
-  let detailDescription: Text = Text("하하!")
+  var detailDescription: TapAddInfo {
+    TapAddInfo()
+  }
 
   typealias ExampleView = TapSample
 
-  typealias DetailDescription = Text
+  typealias DetailDescription = TapAddInfo
 
 }
