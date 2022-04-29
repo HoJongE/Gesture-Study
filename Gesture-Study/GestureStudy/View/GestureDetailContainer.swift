@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import CodeEditorView
 
 // MARK: - 제스처 디테일 컨테이너
 struct GestureDetailContainer<GestureDetail: GestureDetailProtocol>: View {
@@ -31,7 +32,7 @@ struct GestureDetailContainer<GestureDetail: GestureDetailProtocol>: View {
     .navigationTitle(gestureDetail.enNm)
     .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .topLeading)
     .background(Color.background.edgesIgnoringSafeArea(.all))
-    .toolbar(content: toolbar)
+    .toolbar(content: pickerToolbar)
   }
 
   // MARK: - Gesture 의 간단한 설명 Text
@@ -48,12 +49,31 @@ struct GestureDetailContainer<GestureDetail: GestureDetailProtocol>: View {
     switch detailType {
       case .example:
         gestureDetail.exampleView
+          .toolbar(content: addBtnToolbar)
       case .code:
-        Text(gestureDetail.swiftCode)
+        SwiftCodeView(gestureDetail.swiftCode)
+          .toolbar(content: copyToolbar)
     }
   }
 }
 
+// MARK: 예제 코드 컨테이너 뷰
+extension GestureDetailContainer {
+  struct SwiftCodeView: View {
+    @State private var position: CodeEditor.Position = CodeEditor.Position()
+    @State private var messages: Set<Located<Message>> = Set()
+    private let code: String
+
+    init(_ code: String) {
+      self.code = code
+    }
+
+    var body: some View {
+      CodeEditor(text: .constant(code), position: $position, messages: $messages, language: .swift)
+        .environment(\.codeEditorTheme, Theme.defaultDark)
+    }
+  }
+}
 // MARK: - 설명 / 코드 enum
 extension GestureDetailContainer {
 
@@ -64,15 +84,12 @@ extension GestureDetailContainer {
 
 }
 
-// MARK: 툴바 모음
+// MARK: Segmented Picker
 extension GestureDetailContainer {
   @ToolbarContentBuilder
-  func toolbar() -> some ToolbarContent {
+  func pickerToolbar() -> some ToolbarContent {
     ToolbarItem(placement: .principal) {
       segmentedPicker
-    }
-    ToolbarItem(placement: .primaryAction) {
-      additionalInfoBtn
     }
   }
 
@@ -87,12 +104,38 @@ extension GestureDetailContainer {
     }
     .pickerStyle(.segmented)
   }
+}
+// MARK: Additional Info Toolbar
+extension GestureDetailContainer {
+  @ToolbarContentBuilder
+  func addBtnToolbar() -> some ToolbarContent {
+    ToolbarItem(placement: .primaryAction) {
+      additionalInfoBtn
+    }
+  }
 
   private var additionalInfoBtn: some View {
     Button {
       showSheet = true
     } label: {
       Image(systemName: "questionmark.circle")
+    }
+  }
+}
+// MARK: Clipboard copy Toolbar
+extension GestureDetailContainer {
+  @ToolbarContentBuilder
+  func copyToolbar() -> some ToolbarContent {
+    ToolbarItem(placement: .primaryAction) {
+      copyBtn
+    }
+  }
+
+  private var copyBtn: some View {
+    Button {
+      // TODO: 클립보드 카피 기능을 구현해야 함
+    } label: {
+      Image(systemName: "doc.on.clipboard.fill")
     }
   }
 }
