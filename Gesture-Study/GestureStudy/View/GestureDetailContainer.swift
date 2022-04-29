@@ -133,7 +133,7 @@ extension GestureDetailContainer {
 
   private var copyBtn: some View {
     Button {
-      // TODO: 클립보드 카피 기능을 구현해야 함
+      UIPasteboard.general.string = gestureDetail.swiftCode
     } label: {
       Image(systemName: "doc.on.clipboard.fill")
     }
