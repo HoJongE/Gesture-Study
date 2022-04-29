@@ -29,7 +29,10 @@ struct GestureDetailGridView: View {
   private var gridView: some View {
     LazyVGrid(columns: [GridItem(.flexible(), spacing: 0), GridItem(.flexible(), spacing: 0)], spacing: 14) {
       ForEach([Tap()]) { detail in
-        GestureDetailGridItem(gestureDetail: detail)
+        NavigationLink(destination: GestureDetailContainer(detail: detail)) {
+          GestureDetailGridItem(gestureDetail: detail)
+        }
+        .buttonStyle(.plain)
       }
     }
   }
