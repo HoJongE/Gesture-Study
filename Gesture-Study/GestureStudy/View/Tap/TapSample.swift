@@ -1,24 +1,4 @@
 //
-//  Tap.swift
-//  GestureStudy
-//
-//  Created by JongHo Park on 2022/04/28.
-//
-
-import Foundation
-import SwiftUI
-
-struct Tap: GestureDetailProtocol {
-  var id: UUID = UUID()
-
-  let gestureCategory: GestureCategory = .tap
-
-  let enNm: String = "Tap"
-
-  let korNm: String = "탭"
-
-  let swiftCode: String = """
-//
 //  TapSample.swift
 //  GestureStudy
 //
@@ -43,7 +23,7 @@ struct TapSample: View {
     ZStack {
       Color.background
       // 유저가 탭한 포지션에 원 그리기
-      ForEach(positions, id: \\.self) { position in
+      ForEach(positions, id: \.self) { position in
         TapEventCircle(position) {
           positions.removeAll(where: { $0 == position })
         }
@@ -91,18 +71,8 @@ struct TapEventCircle: View {
       }
   }
 }
-"""
-
-  let image: Image = Image(systemName: "hand.tap.fill")
-
-  let shortDescription: String = "단순히 화면을 한 번 터치하는 제스처입니다.\n화면을 터치해보세요!"
-
-  let exampleView: TapSample = TapSample()
-
-  let detailDescription: Text = Text("하하!")
-
-  typealias ExampleView = TapSample
-
-  typealias DetailDescription = Text
-
+struct TapSample_Previews: PreviewProvider {
+  static var previews: some View {
+    TapSample()
+  }
 }
