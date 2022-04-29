@@ -7,14 +7,15 @@
 
 import SwiftUI
 
+// MARK: - 제스처 디테일 컨테이너
 struct GestureDetailContainer<GestureDetail: GestureDetailProtocol>: View {
   @State private var detailType: DetailType = .example
+  @State private var showSheet: Bool = false
   private let gestureDetail: GestureDetail
 
   init(detail gestureDetail: GestureDetail) {
     self.gestureDetail = gestureDetail
     UISegmentedControl.appearance().selectedSegmentTintColor = UIColor(.brand)
-
   }
 
   var body: some View {
@@ -23,6 +24,9 @@ struct GestureDetailContainer<GestureDetail: GestureDetailProtocol>: View {
         simpleDescription
       }
       content
+    }
+    .sheet(isPresented: $showSheet) {
+      BottomSheetContainer(content: { gestureDetail.detailDescription })
     }
     .navigationTitle(gestureDetail.enNm)
     .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .topLeading)
@@ -68,7 +72,7 @@ extension GestureDetailContainer {
       segmentedPicker
     }
     ToolbarItem(placement: .primaryAction) {
-      addInfoBtn
+      additionalInfoBtn
     }
   }
 
@@ -84,15 +88,13 @@ extension GestureDetailContainer {
     .pickerStyle(.segmented)
   }
 
-  private var addInfoBtn: some View {
+  private var additionalInfoBtn: some View {
     Button {
-
+      showSheet = true
     } label: {
       Image(systemName: "questionmark.circle")
     }
-
   }
-
 }
 // MARK: 프리뷰
 struct GestureDetailContainer_Previews: PreviewProvider {
