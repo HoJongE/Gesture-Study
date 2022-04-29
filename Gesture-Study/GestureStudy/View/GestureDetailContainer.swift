@@ -10,6 +10,7 @@ import CodeEditorView
 
 // MARK: - 제스처 디테일 컨테이너
 struct GestureDetailContainer<GestureDetail: GestureDetailProtocol>: View {
+  @State private var showToast: Bool = false
   @State private var detailType: DetailType = .example
   @State private var showSheet: Bool = false
   private let gestureDetail: GestureDetail
@@ -29,6 +30,7 @@ struct GestureDetailContainer<GestureDetail: GestureDetailProtocol>: View {
     .sheet(isPresented: $showSheet) {
       BottomSheetContainer(content: { gestureDetail.detailDescription })
     }
+    .toast("클립보드 복사 완료!", icon: Image(systemName: "doc.on.clipboard.fill"), show: $showToast)
     .navigationTitle(gestureDetail.enNm)
     .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .topLeading)
     .background(Color.background.edgesIgnoringSafeArea(.all))
@@ -133,6 +135,7 @@ extension GestureDetailContainer {
 
   private var copyBtn: some View {
     Button {
+      showToast = true
       UIPasteboard.general.string = gestureDetail.swiftCode
     } label: {
       Image(systemName: "doc.on.clipboard.fill")
