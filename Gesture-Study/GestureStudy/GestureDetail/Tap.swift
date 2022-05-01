@@ -9,7 +9,6 @@ import Foundation
 import SwiftUI
 
 struct Tap: GestureDetailProtocol {
-  var id: UUID = UUID()
 
   let gestureCategory: GestureCategory = .tap
 
@@ -97,16 +96,12 @@ struct TapEventCircle: View {
 
   let shortDescription: String = "단순히 화면을 한 번 터치하는 제스처입니다.\n화면을 터치해보세요!"
 
-  var exampleView: TapSample {
-    TapSample()
+  var exampleView: AnyView {
+    AnyView(TapSample())
   }
 
-  var detailDescription: TapAddInfo {
-    TapAddInfo()
+  var detailDescription: AnyView {
+    AnyView(TapAddInfo())
   }
-
-  typealias ExampleView = TapSample
-
-  typealias DetailDescription = TapAddInfo
 
 }
