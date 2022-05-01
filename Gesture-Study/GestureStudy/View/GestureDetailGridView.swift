@@ -28,7 +28,7 @@ struct GestureDetailGridView: View {
 
   private var gridView: some View {
     LazyVGrid(columns: [GridItem(.flexible(), spacing: 0), GridItem(.flexible(), spacing: 0)], spacing: 14) {
-      ForEach([Tap()]) { detail in
+      ForEach(gestureDetailCollections, id: \.korNm) { detail in
         NavigationLink(destination: GestureDetailContainer(detail: detail)) {
           GestureDetailGridItem(gestureDetail: detail)
         }
@@ -38,9 +38,9 @@ struct GestureDetailGridView: View {
   }
 }
 // MARK: 제스처 디테일 그리드 아이템
-struct GestureDetailGridItem<Detail: GestureDetailProtocol>: View {
+struct GestureDetailGridItem: View {
 
-  let gestureDetail: Detail
+  let gestureDetail: GestureDetailProtocol
 
   var body: some View {
     VStack(alignment: .center, spacing: 2) {

@@ -9,13 +9,13 @@ import SwiftUI
 import CodeEditorView
 
 // MARK: - 제스처 디테일 컨테이너
-struct GestureDetailContainer<GestureDetail: GestureDetailProtocol>: View {
+struct GestureDetailContainer: View {
   @State private var showToast: Bool = false
   @State private var detailType: DetailType = .example
   @State private var showSheet: Bool = false
-  private let gestureDetail: GestureDetail
+  private let gestureDetail: GestureDetailProtocol
 
-  init(detail gestureDetail: GestureDetail) {
+  init(detail gestureDetail: GestureDetailProtocol) {
     self.gestureDetail = gestureDetail
     UISegmentedControl.appearance().selectedSegmentTintColor = UIColor(.brand)
   }
