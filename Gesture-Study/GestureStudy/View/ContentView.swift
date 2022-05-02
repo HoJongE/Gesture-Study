@@ -13,7 +13,6 @@ struct ContentView: View {
     NavigationView {
       contentView
     }
-    .preferredColorScheme(.dark)
   }
 
   private var contentView: some View {

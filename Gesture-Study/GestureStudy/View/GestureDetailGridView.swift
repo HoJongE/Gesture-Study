@@ -20,8 +20,6 @@ struct GestureDetailGridView: View {
     ScrollView(.vertical, showsIndicators: false) {
       gridView
     }
-    .padding(.top, 20)
-    .padding(.horizontal, 8)
     .navigationTitle(category.categoryEnNm)
     .background(Color.background.edgesIgnoringSafeArea(.all))
   }
@@ -35,6 +33,8 @@ struct GestureDetailGridView: View {
         .buttonStyle(.plain)
       }
     }
+    .padding(.top, 20)
+    .padding(.horizontal, 8)
   }
 }
 // MARK: 제스처 디테일 그리드 아이템
