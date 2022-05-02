@@ -62,6 +62,7 @@ struct GestureDetailContainer: View {
 // MARK: 예제 코드 컨테이너 뷰
 extension GestureDetailContainer {
   struct SwiftCodeView: View {
+    @Environment(\.colorScheme) private var colorScheme
     @State private var position: CodeEditor.Position = CodeEditor.Position()
     @State private var messages: Set<Located<Message>> = Set()
     private let code: String
@@ -72,7 +73,7 @@ extension GestureDetailContainer {
 
     var body: some View {
       CodeEditor(text: .constant(code), position: $position, messages: $messages, language: .swift)
-        .environment(\.codeEditorTheme, Theme.defaultDark)
+        .environment(\.codeEditorTheme, colorScheme == .dark ? Theme.defaultDark : Theme.defaultLight)
     }
   }
 }

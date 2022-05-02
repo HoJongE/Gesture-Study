@@ -9,11 +9,13 @@ import SwiftUI
 import CodeEditorView
 
 struct DoubleTapAddInfo: View {
+
     var body: some View {
       VStack(alignment: .leading) {
         title
         OnTapGestureCode()
         Text("위와 같이 사용자가 두 번 탭하거나 여러번 탭하는 것을 감지할 수 있습니다.")
+          .fontWeight(.light)
           .foregroundColor(.subText)
           .padding()
       }
@@ -30,7 +32,7 @@ struct DoubleTapAddInfo: View {
         .frame(height: 30)
       Text("Double tap")
         .foregroundColor(.subText)
-        .font(.title3)
+        .font(.title2)
         .fontWeight(.semibold)
     }
     .padding()
@@ -39,7 +41,7 @@ struct DoubleTapAddInfo: View {
 
 extension DoubleTapAddInfo {
   private struct OnTapGestureCode: View {
-
+    @Environment(\.colorScheme) private var colorScheme: ColorScheme
     var body: some View {
       CodeEditor(text: .constant("""
 Text("Hello World")
@@ -47,7 +49,7 @@ Text("Hello World")
     //두 번 탭할 때 실행할 코드
   }
 """), position: .constant(.init()), messages: .constant(.init()), language: .swift)
-      .environment(\.codeEditorTheme, .defaultDark)
+      .environment(\.codeEditorTheme, colorScheme == .dark ? .defaultDark : .defaultLight)
       .frame(height: 80)
     }
   }
