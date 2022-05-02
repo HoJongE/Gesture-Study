@@ -11,6 +11,16 @@ struct DragAndDropAddInfo: View {
   var body: some View {
     VStack(alignment: .leading) {
       title
+      Text("SwiftUI 에선 Drag and drop 을 아주 쉽게 구현할 수 있습니다.")
+        .fontWeight(.light)
+        .padding(.horizontal)
+        .foregroundColor(.subText)
+
+      Text("Drag")
+        .fontWeight(.semibold)
+        .padding()
+      Text("")
+
     }
     .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .topLeading)
   }
