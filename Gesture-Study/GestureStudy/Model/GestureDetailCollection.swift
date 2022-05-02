@@ -7,4 +7,4 @@
 
 import Foundation
 
-let gestureDetailCollections: [GestureDetailProtocol] = [Tap(), DoubleTap()]
+let gestureDetailCollections: [GestureDetailProtocol] = [Tap(), DoubleTap(), LongPress()]

@@ -121,6 +121,7 @@ extension GestureDetailContainer {
       showSheet = true
     } label: {
       Image(systemName: "questionmark.circle")
+        .foregroundColor(.brand)
     }
   }
 }
@@ -139,6 +140,7 @@ extension GestureDetailContainer {
       UIPasteboard.general.string = gestureDetail.swiftCode
     } label: {
       Image(systemName: "doc.on.clipboard.fill")
+        .foregroundColor(.brand)
     }
   }
 }
