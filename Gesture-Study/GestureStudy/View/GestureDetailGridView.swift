@@ -11,9 +11,12 @@ import SwiftUI
 struct GestureDetailGridView: View {
 
   private let category: GestureCategory
-
+  private let gestureDetails: [GestureDetailProtocol]
   init(category gestureCategory: GestureCategory) {
     self.category = gestureCategory
+    self.gestureDetails = gestureDetailCollections.filter {
+      gestureCategory == $0.gestureCategory
+    }
   }
 
   var body: some View {
@@ -26,7 +29,7 @@ struct GestureDetailGridView: View {
 
   private var gridView: some View {
     LazyVGrid(columns: [GridItem(.flexible(), spacing: 0), GridItem(.flexible(), spacing: 0)], spacing: 14) {
-      ForEach(gestureDetailCollections, id: \.korNm) { detail in
+      ForEach(gestureDetails, id: \.korNm) { detail in
         NavigationLink(destination: GestureDetailContainer(detail: detail)) {
           GestureDetailGridItem(gestureDetail: detail)
         }

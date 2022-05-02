@@ -12,7 +12,7 @@ struct GestureCategoryGridView: View {
   var body: some View {
     LazyVGrid(columns: [GridItem(.flexible(), spacing: 0), GridItem(.flexible(), spacing: 0)], spacing: 14) {
       ForEach(GestureCategory.allCases, id: \.self) { category in
-        NavigationLink(destination: GestureDetailGridView(category: .tap)) {
+        NavigationLink(destination: GestureDetailGridView(category: category)) {
           GestureCategoryGridItemView(category: category)
         }
         .buttonStyle(PlainButtonStyle())
