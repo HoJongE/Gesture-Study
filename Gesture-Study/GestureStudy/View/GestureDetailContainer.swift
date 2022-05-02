@@ -52,27 +52,8 @@ struct GestureDetailContainer: View {
         gestureDetail.exampleView
           .toolbar(content: addBtnToolbar)
       case .code:
-        SwiftCodeView(gestureDetail.swiftCode)
+        SwiftCodeEditor(gestureDetail.swiftCode)
           .toolbar(content: copyToolbar)
-    }
-  }
-}
-
-// MARK: 예제 코드 컨테이너 뷰
-extension GestureDetailContainer {
-  struct SwiftCodeView: View {
-    @Environment(\.colorScheme) private var colorScheme
-    @State private var position: CodeEditor.Position = CodeEditor.Position()
-    @State private var messages: Set<Located<Message>> = Set()
-    private let code: String
-
-    init(_ code: String) {
-      self.code = code
-    }
-
-    var body: some View {
-      CodeEditor(text: .constant(code), position: $position, messages: $messages, language: .swift)
-        .environment(\.codeEditorTheme, colorScheme == .dark ? Theme.defaultDark : Theme.defaultLight)
     }
   }
 }

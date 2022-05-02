@@ -32,7 +32,7 @@ struct TapAddInfo: View {
   private var title: some View {
     HStack(alignment: .center) {
       Image(systemName: "hand.tap.fill")
-        .imageScale(.large)
+        .imageScale(.large) 
         .foregroundColor(.brand)
       Text("Tap")
         .addInfoTitle()
@@ -40,26 +40,24 @@ struct TapAddInfo: View {
   }
 
   private var onTapGestureCode: some View {
-    CodeEditor(text: .constant("""
+    SwiftCodeEditor("""
 Text("Hello World")
   .onTapGesture {
      print("Text Tapped!")
   }
-"""), position: .constant(.init()), messages: .constant([]), language: .swift)
+""")
     .frame(height: 80)
-    .environment(\.codeEditorTheme, colorScheme == .dark ? .defaultDark : .defaultLight)
   }
 
   private var getPositionCode: some View {
-    CodeEditor(text: .constant("""
+    SwiftCodeEditor("""
 private var tapGesture: some Gesture {
     DragGesture(minimumDistance: 0)
       .onEnded { action in
         print(action.location)
       }
   }
-"""), position: .constant(.init()), messages: .constant([]), language: .swift)
-    .environment(\.codeEditorTheme, colorScheme == .dark ? .defaultDark : .defaultLight)
+""")
     .frame(height: 110)
   }
 }

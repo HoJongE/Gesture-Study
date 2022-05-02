@@ -52,7 +52,7 @@ struct DragAddInfo: View {
   }
 
   private var dragGestureCode: some View {
-    CodeEditor(text: .constant("""
+    SwiftCodeEditor("""
 private var dragGesture: some Gesture {
   DragGesture()
     .onChanged { action in
@@ -62,8 +62,7 @@ private var dragGesture: some Gesture {
       print(action)
     }
 }
-"""), position: .constant(.init()), messages: .constant(.init()), language: .swift)
-    .environment(\.codeEditorTheme, colorScheme == .dark ? .defaultDark : .defaultLight)
+""")
   }
 
   private var location: some View {
