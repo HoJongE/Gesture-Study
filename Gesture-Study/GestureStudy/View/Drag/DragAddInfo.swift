@@ -16,17 +16,15 @@ struct DragAddInfo: View {
         title
         dragGestureCode.frame(height: 160)
         Text("위와 같이 Drag 제스처를 정의할 수 있습니다. Drag 상태가 변하는 동안 onChanged 에서 정의된 클로저가 실행되며, Drag 제스처가 종료되는 경우 onEnded 에서 정의된 클로저가 실행됩니다.")
-          .foregroundColor(.subText)
-          .fontWeight(.light)
+          .addInfoText()
           .padding()
 
         Text("Drag gesture value")
-          .fontWeight(.semibold)
+          .addInfoSubTitle()
           .padding(.horizontal)
 
         Text("Drag 제스처의 상태가 변할 때마다 Drag gesture Value 를 전달해줍니다. 해당 Value 에서 다음 정보들을 사용할 수 있습니다.")
-          .fontWeight(.light)
-          .foregroundColor(.subText)
+          .addInfoText()
           .padding()
         location
         translation

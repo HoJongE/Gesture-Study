@@ -55,12 +55,10 @@ struct GestureDetailGridItem: View {
         .padding(.init(top: 34, leading: 0, bottom: 25, trailing: 0))
 
       Text(gestureDetail.enNm)
-        .font(.title3)
-        .bold()
+        .gridItemTitle()
 
       Text(gestureDetail.korNm)
-        .font(.caption)
-        .foregroundColor(.subText)
+        .gridSubTitle()
         .padding(.bottom, 10)
     }
     .lineLimit(1)
