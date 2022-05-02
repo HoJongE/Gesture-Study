@@ -15,8 +15,7 @@ struct DoubleTapAddInfo: View {
         title
         OnTapGestureCode()
         Text("위와 같이 사용자가 두 번 탭하거나 여러번 탭하는 것을 감지할 수 있습니다.")
-          .fontWeight(.light)
-          .foregroundColor(.subText)
+          .addInfoText()
           .padding()
       }
       .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .topLeading)
@@ -31,8 +30,7 @@ struct DoubleTapAddInfo: View {
         .foregroundColor(.brand)
         .frame(height: 30)
       Text("Double tap")
-        .foregroundColor(.subText)
-        .font(.title2)
+        .addInfoTitle()
         .fontWeight(.semibold)
     }
     .padding()

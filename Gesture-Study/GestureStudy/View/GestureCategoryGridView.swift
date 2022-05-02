@@ -42,12 +42,10 @@ struct GestureCategoryGridItemView: View {
         .padding(.init(top: 34, leading: 0, bottom: 25, trailing: 0))
 
       Text(gestureCategory.categoryEnNm)
-        .font(.title3)
-        .bold()
+        .gridItemTitle()
 
       Text(gestureCategory.categoryKorNm)
-        .font(.caption)
-        .foregroundColor(.subText)
+        .gridSubTitle()
         .padding(.bottom, 10)
     }
     .lineLimit(1)

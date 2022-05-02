@@ -40,8 +40,7 @@ struct GestureDetailContainer: View {
   // MARK: - Gesture 의 간단한 설명 Text
   private var simpleDescription: some View {
     Text(gestureDetail.shortDescription)
-      .font(.body)
-      .foregroundColor(.subText)
+      .shortDescription()
       .padding(.init(top: 14, leading: 16, bottom: 0, trailing: 16))
   }
 
