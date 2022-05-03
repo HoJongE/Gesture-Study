@@ -32,7 +32,7 @@ struct TapAddInfo: View {
   private var title: some View {
     HStack(alignment: .center) {
       Image(systemName: "hand.tap.fill")
-        .imageScale(.large) 
+        .imageScale(.large)
         .foregroundColor(.brand)
       Text("Tap")
         .addInfoTitle()
