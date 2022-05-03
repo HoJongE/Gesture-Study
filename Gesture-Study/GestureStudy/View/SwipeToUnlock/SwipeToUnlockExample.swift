@@ -97,8 +97,10 @@ extension SwipeToUnlock {
     // 애니메이션을 시작하는 함수
     private func startAnimation() {
       animation = false
-      withAnimation(.linear(duration: 1.5).repeatForever(autoreverses: false)) {
-        animation.toggle()
+      DispatchQueue.main.async {
+        withAnimation(.linear(duration: 1.5).repeatForever(autoreverses: false)) {
+          animation.toggle()
+        }
       }
     }
     // Drag gesture 가 일정 범위를 넘어가지 못하도록 tranlsation 을 변환하는 함수
