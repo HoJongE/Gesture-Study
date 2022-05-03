@@ -12,7 +12,6 @@ enum GestureCategory: CaseIterable {
   case tap
   case drag
   case swipe
-  case flick
   case pinch
   case rotate
 }
@@ -26,8 +25,6 @@ extension GestureCategory {
         return "Drag"
       case .swipe:
         return "Swipe"
-      case .flick:
-        return "Flick"
       case .pinch:
         return "Pinch"
       case .rotate:
@@ -42,8 +39,6 @@ extension GestureCategory {
         return "드래그"
       case .swipe:
         return "스와이프"
-      case .flick:
-        return "플릭"
       case .pinch:
         return "핀치"
       case .rotate:
@@ -58,8 +53,6 @@ extension GestureCategory {
         return Image(systemName: "hand.draw.fill")
       case .swipe:
         return Image("Swipe")
-      case .flick:
-        return Image("Flick")
       case .pinch:
         return Image(systemName: "arrow.up.backward.and.arrow.down.forward")
       case .rotate:

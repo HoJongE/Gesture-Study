@@ -129,7 +129,7 @@ extension GestureDetailContainer {
 struct GestureDetailContainer_Previews: PreviewProvider {
   static var previews: some View {
     NavigationView {
-      GestureDetailContainer(detail: Tap())
+      GestureDetailContainer(detail: SwipeToUnlock())
         .preferredColorScheme(.dark)
     }
   }
