@@ -32,7 +32,7 @@ struct RotateExample: View {
       }
     }
   }
-
+  // 회전시킬 이미지
   private var imageToRotate: some View {
     Image(systemName: "headphones")
       .resizable()
@@ -41,7 +41,7 @@ struct RotateExample: View {
       .foregroundColor(.brand)
   }
 }
-
+// MARK: - 프리뷰
 struct RotateExample_Previews: PreviewProvider {
   static var previews: some View {
     RotateExample()
