@@ -12,7 +12,7 @@ struct SwipeToUnlockAddInfo: View {
       ScrollView(.vertical, showsIndicators: false) {
         VStack(alignment: .leading) {
           title
-          Text("SwiftUI 에서 따로 Swipe Gesture 를 지원해주진 않습니다. 하지만 Drag gesture 와 Drag 정보를 이용해서 직접 계산하는 방식으로 Swipe gesture 를 구현할 수 있습니다.")
+          Text("SwiftUI 에서 따로 **Swipe Gesture** 를 지원해주진 않습니다. 하지만 **Drag gesture** 와 **Drag 정보**를 이용해서 직접 계산하는 방식으로 Swipe gesture 를 구현할 수 있습니다.")
             .addInfoText()
             .padding(.horizontal)
           Text("Drag gesture 의 예측 종료 지점, 예측 변경량 활용하기")
