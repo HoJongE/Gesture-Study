@@ -17,6 +17,9 @@ extension Color {
   static let stuBtnTop: Color = Color("SwipeToUnlockButtonTopColor")
   static let stuBtnCenter: Color = Color("SwipeToUnlockButtonCenterColor")
   static let stuBtnBottom: Color = Color("SwipeToUnlockButtonBottomColor")
+  static let stuText: Color = Color("SwipeToUnlockTextColor")
   static let background: Color = Color("BackgroundColor")
   static let gridItemBackground: Color = Color("GridItemBackground")
+  static let stuStroke: Color = Color("SwipeToUnlockStrokeColor")
+  static let stuArrow: Color = Color("SwipeToUnlockArrowColor")
 }
