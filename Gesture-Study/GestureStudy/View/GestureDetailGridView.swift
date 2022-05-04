@@ -28,7 +28,7 @@ struct GestureDetailGridView: View {
   }
 
   private var gridView: some View {
-    LazyVGrid(columns: [GridItem(.flexible(), spacing: 0), GridItem(.flexible(), spacing: 0)], spacing: 14) {
+    LazyVGrid(columns: [GridItem(.adaptive(minimum: 140, maximum: 200))]) {
       ForEach(gestureDetails, id: \.korNm) { detail in
         NavigationLink(destination: GestureDetailContainer(detail: detail)) {
           GestureDetailGridItem(gestureDetail: detail)
@@ -37,12 +37,12 @@ struct GestureDetailGridView: View {
       }
     }
     .padding(.top, 20)
-    .padding(.horizontal, 8)
+    .padding(.horizontal, 16)
   }
 }
 // MARK: 제스처 디테일 그리드 아이템
 struct GestureDetailGridItem: View {
-
+  @Environment(\.colorScheme) private var colorScheme
   let gestureDetail: GestureDetailProtocol
 
   var body: some View {
@@ -51,7 +51,7 @@ struct GestureDetailGridItem: View {
         .resizable()
         .aspectRatio(contentMode: .fill)
         .frame(width: 52, height: 52)
-        .foregroundColor(.brand)
+        .foregroundColor(colorScheme == .dark ? .white : .brand)
         .padding(.init(top: 34, leading: 0, bottom: 25, trailing: 0))
 
       Text(gestureDetail.enNm)
@@ -64,7 +64,6 @@ struct GestureDetailGridItem: View {
     .lineLimit(1)
     .frame(maxWidth: 300)
     .background(RoundedRectangle(cornerRadius: 8).fill(Color.gridItemBackground).shadow(radius: 2))
-    .padding(.horizontal, 8)
   }
 }
 // MARK: 제스처 디테일 프리뷰

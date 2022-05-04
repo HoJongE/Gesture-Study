@@ -33,9 +33,7 @@ struct DragAndDropExample: View {
   // MARK: - ZStack 위에 Emoji 를 배치
   private var emojiView: some View {
     ForEach(emojiBoard.emojis) { emojiItem in
-      Text(emojiItem.emoji)
-        .font(.system(size: emojiItem.fontSize))
-        .position(x: emojiItem.x, y: emojiItem.y)
+      EmojiView(emojiItem)
     }
   }
   // MARK: - 드래그할 수 있는 이모지 모음
@@ -106,6 +104,36 @@ struct EmojiDropDelegat: DropDelegate {
       }
     }
     return true
+  }
+}
+// MARK: - Emoji View
+struct EmojiView: View {
+
+  private let emoji: EmojiBoard.EmojiItem
+  @State private var x: CGFloat
+  @State private var y: CGFloat
+
+  init(_ emoji: EmojiBoard.EmojiItem) {
+    self.emoji = emoji
+    self._x = State(initialValue: emoji.x)
+    self._y = State(initialValue: emoji.y)
+  }
+
+  private var dragGesture: some Gesture {
+    DragGesture(minimumDistance: 0, coordinateSpace: .local)
+      .onChanged { action in
+        withAnimation(.interactiveSpring()) {
+          x = action.location.x
+          y = action.location.y
+        }
+      }
+  }
+
+  var body: some View {
+    Text(emoji.emoji)
+      .font(.system(size: emoji.fontSize))
+      .position(x: x, y: y)
+      .gesture(dragGesture)
   }
 }
 // MARK: - 프리뷰

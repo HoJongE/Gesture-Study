@@ -13,13 +13,14 @@ struct ContentView: View {
     NavigationView {
       contentView
     }
+    .accentColor(.brand)
   }
 
   private var contentView: some View {
     ScrollView(.vertical, showsIndicators: false) {
       GestureCategoryGridView()
     }
-    .navigationTitle("Gesture Category")
+    .navigationTitle("제스처 종류")
     .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .topLeading)
     .background(Color.background.edgesIgnoringSafeArea(.all))
     .toolbar(content: toolbar)
@@ -35,9 +36,7 @@ extension ContentView {
   }
 
   private var higBtn: some View {
-    Button {
-      print("Hello")
-    } label: {
+    Link(destination: URL(string: "https://developer.apple.com/design/human-interface-guidelines/ios/user-interaction/gestures/")!) {
       Label("HIG", systemImage: "questionmark.circle")
         .labelStyle(.titleAndIcon)
         .foregroundColor(.brand)

@@ -10,7 +10,7 @@ import SwiftUI
 // MARK: - Gesture Category 그리드 뷰
 struct GestureCategoryGridView: View {
   var body: some View {
-    LazyVGrid(columns: [GridItem(.flexible(), spacing: 0), GridItem(.flexible(), spacing: 0)], spacing: 14) {
+    LazyVGrid(columns: [GridItem(.adaptive(minimum: 140, maximum: 200))]) {
       ForEach(GestureCategory.allCases, id: \.self) { category in
         NavigationLink(destination: GestureDetailGridView(category: category)) {
           GestureCategoryGridItemView(category: category)
@@ -19,13 +19,16 @@ struct GestureCategoryGridView: View {
       }
     }
     .padding(.top, 20)
-    .padding(.horizontal, 8)
+    .padding(.horizontal, 16)
   }
 }
 
 // MARK: - Gesture Category 그리드 아이템 뷰
 struct GestureCategoryGridItemView: View {
+
   private let gestureCategory: GestureCategory
+
+  @Environment(\.colorScheme) private var colorScheme
 
   init(category gestureCategory: GestureCategory) {
     self.gestureCategory = gestureCategory
@@ -38,7 +41,7 @@ struct GestureCategoryGridItemView: View {
         .resizable()
         .aspectRatio(contentMode: .fill)
         .frame(width: 52, height: 52)
-        .foregroundColor(.brand)
+        .foregroundColor(colorScheme == .dark ? .white : .brand)
         .padding(.init(top: 34, leading: 0, bottom: 25, trailing: 0))
 
       Text(gestureCategory.categoryEnNm)
@@ -49,9 +52,8 @@ struct GestureCategoryGridItemView: View {
         .padding(.bottom, 10)
     }
     .lineLimit(1)
-    .frame(maxWidth: 300)
+    .frame(maxWidth: 200)
     .background(RoundedRectangle(cornerRadius: 8).fill(Color.gridItemBackground).shadow(radius: 2))
-    .padding(.horizontal, 8)
   }
 }
 // MARK: - Gesture Category 프리뷰
