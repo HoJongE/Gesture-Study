@@ -11,7 +11,7 @@ struct DragAndDropExample: View {
   // 다크모드, 라이트 모드 정보
   @Environment(\.colorScheme) private var colorScheme
   // 이모지 배열
-  private let emojis: String = "🍏🍎🍈🥐⚽️🏀🤿⛹️‍♂️🎧🎬🎤🎻🎗🚨📹💻💸🖲🎚♊️🇬🇬🆘🦐🦎🐙🐕💨🎾🥏🛥🦽🚐🏣📐⌙"
+  private let emojis: String = "🍏🍎🍈🥐⚽️🏀🤿⛹️‍♂️🎧🎬🎤🎻🎗🚨📹💻💸🖲🎚♊️🇬🇬🆘🦐🦎🐙🐕💨🎾🥏🛥🦽🚐🏣📐"
   // 이모지 보드
   @ObservedObject private var emojiBoard: EmojiBoard = EmojiBoard()
 
