@@ -14,6 +14,7 @@ enum GestureCategory: CaseIterable {
   case swipe
   case pinch
   case rotate
+  case sequence
 }
 
 extension GestureCategory {
@@ -29,6 +30,8 @@ extension GestureCategory {
         return "Pinch"
       case .rotate:
         return "Rotate"
+      case .sequence:
+        return "Sequence"
     }
   }
   var categoryKorNm: String {
@@ -43,6 +46,8 @@ extension GestureCategory {
         return "핀치"
       case .rotate:
         return "로테이트"
+      case .sequence:
+        return "연속 제스처"
     }
   }
   var gestureImage: Image {
@@ -52,11 +57,13 @@ extension GestureCategory {
       case .drag:
         return Image(systemName: "hand.draw.fill")
       case .swipe:
-        return Image("Swipe")
+        return Image(ImageName.swipe)
       case .pinch:
         return Image(systemName: "arrow.up.backward.and.arrow.down.forward")
       case .rotate:
         return Image(systemName: "crop.rotate")
+      case .sequence:
+        return Image(systemName: ImageName.sequence)
     }
   }
 }
