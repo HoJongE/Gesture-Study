@@ -1,0 +1,9 @@
+/* 
+  InfoPlist.strings
+  GestureStudy
+
+  Created by JongHo Park on 2022/05/05.
+  
+*/
+"CFBundleDisplayName" = "Gesture Study";
+"CFBundleName" = "Gesture Study";

@@ -19,7 +19,6 @@ struct GestureCategoryGridView: View {
       }
     }
     .padding(.top, 20)
-    .padding(.horizontal, 16)
   }
 }
 
@@ -41,7 +40,7 @@ struct GestureCategoryGridItemView: View {
         .resizable()
         .aspectRatio(contentMode: .fill)
         .frame(width: 52, height: 52)
-        .foregroundColor(colorScheme == .dark ? .white : .brand)
+        .foregroundColor(Color.brand)
         .padding(.init(top: 34, leading: 0, bottom: 25, trailing: 0))
 
       Text(gestureCategory.categoryEnNm)
@@ -53,7 +52,8 @@ struct GestureCategoryGridItemView: View {
     }
     .lineLimit(1)
     .frame(maxWidth: 200)
-    .background(RoundedRectangle(cornerRadius: 8).fill(Color.gridItemBackground).shadow(radius: 2))
+    .background(RoundedRectangle(cornerRadius: 16).fill(.ultraThinMaterial).shadow(radius: 2))
+    .padding(8)
   }
 }
 // MARK: - Gesture Category 프리뷰

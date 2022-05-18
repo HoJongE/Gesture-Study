@@ -51,8 +51,8 @@ struct DragAndDropExample: View {
       }
       .padding(8)
     }
-    .background(colorScheme == .dark ? Color.black.edgesIgnoringSafeArea(.all) : Color.white.edgesIgnoringSafeArea(.all))
-    .shadow(radius: 2)
+    .background(colorScheme == .dark ? Color("LightBlack").edgesIgnoringSafeArea(.all).shadow(radius: 4) : Color.white.edgesIgnoringSafeArea(.all).shadow(radius: 4))
+
   }
 }
 // MARK: - 이모지 데이터를 관리하는 class

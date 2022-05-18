@@ -15,7 +15,7 @@ struct SwipeToUnlockExample: View {
         .resizable()
         .aspectRatio(contentMode: .fit)
         .frame(height: 150)
-        .foregroundColor(.black)
+        .foregroundColor(.gray)
       SwipeToUnlock.Unlock(unlock: $unlock)
         .padding(.top, 32)
     }
