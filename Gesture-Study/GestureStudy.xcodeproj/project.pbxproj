@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		000F3F4B284382D700FB9C1A /* Framework.swift in Sources */ = {isa = PBXBuildFile; fileRef = 000F3F4A284382D700FB9C1A /* Framework.swift */; };
+		000F3F4D284385B200FB9C1A /* FrameworkIndicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 000F3F4C284385B200FB9C1A /* FrameworkIndicator.swift */; };
+		000F3F5028438C1C00FB9C1A /* View++Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 000F3F4F28438C1C00FB9C1A /* View++Extension.swift */; };
 		0068682D28237EDA00C6C181 /* LongPressAndDrag.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0068682C28237EDA00C6C181 /* LongPressAndDrag.swift */; };
 		006868302823808E00C6C181 /* LongPressAndDragExample.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0068682F2823808E00C6C181 /* LongPressAndDragExample.swift */; };
 		006868322823809700C6C181 /* LongPressAndDragAddInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 006868312823809700C6C181 /* LongPressAndDragAddInfo.swift */; };
@@ -77,6 +80,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		000F3F4A284382D700FB9C1A /* Framework.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Framework.swift; sourceTree = "<group>"; };
+		000F3F4C284385B200FB9C1A /* FrameworkIndicator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FrameworkIndicator.swift; sourceTree = "<group>"; };
+		000F3F4F28438C1C00FB9C1A /* View++Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "View++Extension.swift"; sourceTree = "<group>"; };
 		0068682C28237EDA00C6C181 /* LongPressAndDrag.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LongPressAndDrag.swift; sourceTree = "<group>"; };
 		0068682F2823808E00C6C181 /* LongPressAndDragExample.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LongPressAndDragExample.swift; sourceTree = "<group>"; };
 		006868312823809700C6C181 /* LongPressAndDragAddInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LongPressAndDragAddInfo.swift; sourceTree = "<group>"; };
@@ -158,6 +164,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		000F3F4E28438C1600FB9C1A /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				000F3F4F28438C1C00FB9C1A /* View++Extension.swift */,
+			);
+			path = Extension;
+			sourceTree = "<group>";
+		};
 		0068682E2823807A00C6C181 /* LongPressAndDrag */ = {
 			isa = PBXGroup;
 			children = (
@@ -173,6 +187,7 @@
 				007C5CD2281A175800D17A5C /* GestureCategory.swift */,
 				008F7904281A632D0053E234 /* GestureDetailProtocol.swift */,
 				007D8D80281C1C4D005AF15A /* GestureDetailCollection.swift */,
+				000F3F4A284382D700FB9C1A /* Framework.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -222,6 +237,7 @@
 				007D8D71281B7554005AF15A /* Toast.swift */,
 				00FA1C26281FFE4D00BA03B2 /* TextStyle.swift */,
 				00FA1C28282001D600BA03B2 /* SwiftCodeEditor.swift */,
+				000F3F4C284385B200FB9C1A /* FrameworkIndicator.swift */,
 			);
 			path = Helper;
 			sourceTree = "<group>";
@@ -303,6 +319,7 @@
 		00AA2B2F28166F68006CBF22 /* GestureStudy */ = {
 			isa = PBXGroup;
 			children = (
+				000F3F4E28438C1600FB9C1A /* Extension */,
 				007D8D6F281B7531005AF15A /* System */,
 				008F7906281A66B00053E234 /* GestureDetail */,
 				007C5CD6281A1D4B00D17A5C /* View */,
@@ -551,6 +568,7 @@
 				0098D5AE2821548700EFE194 /* Rotate.swift in Sources */,
 				0098D5AC282103FE00EFE194 /* PinchToZoomAddInfo.swift in Sources */,
 				007D8D72281B7554005AF15A /* Toast.swift in Sources */,
+				000F3F4D284385B200FB9C1A /* FrameworkIndicator.swift in Sources */,
 				00FA1C21281FC6A700BA03B2 /* DragAndDropAddInfo.swift in Sources */,
 				007D8D81281C1C4D005AF15A /* GestureDetailCollection.swift in Sources */,
 				0098D5AA282103F000EFE194 /* PinchToZoomExample.swift in Sources */,
@@ -568,8 +586,10 @@
 				006868322823809700C6C181 /* LongPressAndDragAddInfo.swift in Sources */,
 				00AA4CDA281969B9006E423D /* ImageName.swift in Sources */,
 				00FA1C0D281E572400BA03B2 /* LongPressExample.swift in Sources */,
+				000F3F5028438C1C00FB9C1A /* View++Extension.swift in Sources */,
 				00FA1C25281FFCBC00BA03B2 /* DragAndDrop.swift in Sources */,
 				008F790F281A714F0053E234 /* Tap.swift in Sources */,
+				000F3F4B284382D700FB9C1A /* Framework.swift in Sources */,
 				00FA1C1F281FC6A100BA03B2 /* DragAndDropExample.swift in Sources */,
 				0068682D28237EDA00C6C181 /* LongPressAndDrag.swift in Sources */,
 				007D8D7B281C1A5E005AF15A /* DoubleTap.swift in Sources */,

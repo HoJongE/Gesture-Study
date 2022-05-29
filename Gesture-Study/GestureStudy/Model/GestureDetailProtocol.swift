@@ -17,4 +17,5 @@ protocol GestureDetailProtocol {
   var shortDescription: String { get }
   var exampleView: AnyView { get }
   var detailDescription: AnyView { get }
+  var framework: Framework { get } 
 }

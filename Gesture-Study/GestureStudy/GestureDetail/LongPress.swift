@@ -10,6 +10,8 @@ import SwiftUI
 
 struct LongPress: GestureDetailProtocol {
 
+  let framework: Framework = .SwiftUI
+
   let gestureCategory: GestureCategory = .tap
 
   let enNm: String = "Long press"

@@ -11,6 +11,8 @@ import SwiftUI
 struct LongPressAndDrag: GestureDetailProtocol {
   let gestureCategory: GestureCategory = .sequence
 
+  let framework: Framework = .SwiftUI
+
   let enNm: String = "Long press to drag"
 
   let korNm: String = "길게 눌러서 드래그하기"

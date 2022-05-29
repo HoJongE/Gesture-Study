@@ -9,6 +9,9 @@ import Foundation
 import SwiftUI
 
 struct SwipeToUnlock: GestureDetailProtocol {
+
+  let framework: Framework = .SwiftUI
+
   let gestureCategory: GestureCategory = .swipe
 
   let enNm: String = "Swipe to unlock"

@@ -11,6 +11,8 @@ import SwiftUI
 struct Pinch: GestureDetailProtocol {
   let gestureCategory: GestureCategory = .pinch
 
+  let framework: Framework = .SwiftUI
+
   let enNm: String = "Pinch to zoom"
 
   let korNm: String = "핀치 투 줌"

@@ -15,4 +15,6 @@ enum ImageName {
   static let swipeToUnlock: String = "SwipeToUnlock"
   static let longPress: String = "LongPress"
   static let sequence: String = "arrow.right.square.fill"
+  static let swiftUI: String = "SwiftUI"
+  static let uikit: String = "UIKit"
 }

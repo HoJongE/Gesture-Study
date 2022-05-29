@@ -9,6 +9,8 @@ import Foundation
 import SwiftUI
 
 struct DoubleTap: GestureDetailProtocol {
+  let framework: Framework = .SwiftUI
+
   let gestureCategory: GestureCategory = .tap
 
   let enNm: String = "Double tap"

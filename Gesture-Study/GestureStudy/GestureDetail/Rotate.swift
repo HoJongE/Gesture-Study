@@ -12,6 +12,8 @@ struct Rotate: GestureDetailProtocol {
 
   let gestureCategory: GestureCategory = .rotate
 
+  let framework: Framework = .SwiftUI
+
   let enNm: String = "Rotate"
 
   let korNm: String = "회전"

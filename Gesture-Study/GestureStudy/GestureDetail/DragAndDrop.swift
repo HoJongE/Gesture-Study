@@ -9,13 +9,16 @@ import Foundation
 import SwiftUI
 
 struct DragAndDrop: GestureDetailProtocol {
-  var gestureCategory: GestureCategory = .drag
 
-  var enNm: String = "Drag and drop"
+  let framework: Framework = .SwiftUI
 
-  var korNm: String = "드래그 앤 드랍"
+  let gestureCategory: GestureCategory = .drag
 
-  var swiftCode: String = """
+  let enNm: String = "Drag and drop"
+
+  let korNm: String = "드래그 앤 드랍"
+
+  let swiftCode: String = """
 //
 //  DragAndDropExample.swift
 //  GestureStudy
@@ -156,9 +159,11 @@ struct EmojiView: View {
 }
 """
 
-  var image: Image = Image(ImageName.dragAndDrop)
+  var image: Image {
+    Image(ImageName.dragAndDrop)
+  }
 
-  var shortDescription: String = "어떤 물체를 다른 위치로 이동시키거나, 다른 물체로 이동시키는 것을 드래그 앤 드롭이라고 합니다."
+  let shortDescription: String = "어떤 물체를 다른 위치로 이동시키거나, 다른 물체로 이동시키는 것을 드래그 앤 드롭이라고 합니다."
 
   var exampleView: AnyView {
     AnyView(DragAndDropExample())

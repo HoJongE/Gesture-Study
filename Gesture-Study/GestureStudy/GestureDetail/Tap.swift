@@ -12,6 +12,8 @@ struct Tap: GestureDetailProtocol {
 
   let gestureCategory: GestureCategory = .tap
 
+  let framework: Framework = .SwiftUI
+
   let enNm: String = "Tap"
 
   let korNm: String = "탭"

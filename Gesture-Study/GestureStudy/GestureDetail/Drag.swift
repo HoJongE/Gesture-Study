@@ -9,13 +9,15 @@ import Foundation
 import SwiftUI
 
 struct Drag: GestureDetailProtocol {
-  var gestureCategory: GestureCategory = .drag
+  let gestureCategory: GestureCategory = .drag
 
-  var enNm: String = "Drag"
+  let framework: Framework = .SwiftUI
 
-  var korNm: String = "드래그"
+  let enNm: String = "Drag"
 
-  var swiftCode: String = """
+  let korNm: String = "드래그"
+
+  let swiftCode: String = """
 //
 //  DragExample.swift
 //  GestureStudy
@@ -74,9 +76,11 @@ struct DragExample: View {
 }
 """
 
-  var image: Image = Image(systemName: "hand.draw.fill")
+  var image: Image {
+    Image(systemName: "hand.draw.fill")
+  }
 
-  var shortDescription: String = "어떤 물체를 누른 채로 이동시킬 수 있습니다. 아래 이미지를 이동시켜보세요"
+  let shortDescription: String = "어떤 물체를 누른 채로 이동시킬 수 있습니다. 아래 이미지를 이동시켜보세요"
 
   var exampleView: AnyView {
     AnyView(DragExample())
